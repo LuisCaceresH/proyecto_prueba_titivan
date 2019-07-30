@@ -1,7 +1,7 @@
 const express = require('express');
 const auth = require('../middlewares/authentication');
 const router = express.Router();
-const rutasController = require('../controllers/usuario.controller');
+const usuarioController = require('../controllers/usuario.controller');
 
 router.post('/login', usuarioController.loginAdmin);
 router.post('/cambiar-contrasena', [auth.verificarTokenUsuario, auth.isAdmin], usuarioController.cambiarContraseñaAdmin);

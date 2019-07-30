@@ -1,7 +1,7 @@
 const express = require('express');
 const auth = require('../middlewares/authentication');
 const router = express.Router();
-const itinerariosController = require('../controllers/paraderos.controller');
+const paraderosController = require('../controllers/paraderos.controller');
 
 router.post('/crear', [auth.verificarTokenUsuario, auth.isAdmin], paraderosController.crear);
 router.post('/modificar', [auth.verificarTokenUsuario, auth.isAdmin], paraderosController.modificar);
